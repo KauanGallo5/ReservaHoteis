@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  {% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/reservar_quarto.css' %}">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  {% load static %}
+  <title>Reservar Quarto - {{ quarto.hotel.nome }}</title>
+</head>
+<body>
+  {% load static %}
+  <h1>Reservar Quarto {{ quarto.numero }} no Hotel {{ quarto.hotel.nome }}</h1>
+
+  <form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Reservar</button>
+  </form>
+
+  <p><a href="{% url 'detalhes_hotel' quarto.hotel.id %}">Voltar para os detalhes do hotel</a></p>
+</body>
+</html>

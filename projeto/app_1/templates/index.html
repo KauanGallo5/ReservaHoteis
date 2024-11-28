@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}?v=2">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Hotéis</title>
+</head>
+<body>
+    <h1>Hotéis dos Sonhos</h1>
+
+    {% if user.is_authenticated %}
+        <div class="logout-container">
+            <p>Bem-vindo, {{ user.username }}! 
+                <form method="POST" action="{% url 'logout' %}">
+                    {% csrf_token %}
+                    <button type="submit">Sair</button>
+                </form>
+            </p>
+        </div>        
+    {% else %}
+        <div class="auth-links">
+            <p><a href="{% url 'login' %}">Entrar</a> | <a href="{% url 'registro' %}">Registrar</a></p>
+        </div>
+    {% endif %}
+
+    <a href="{% url 'minhas_reservas' %}">Ver minhas reservas</a>
+    <h2>Hotéis Disponíveis</h2>
+
+    <ul>
+        {% for hotel in hotels %}
+            <li>
+                <h3><a href="{% url 'detalhes_hotel' hotel.id %}">{{ hotel.nome }}</a></h3>
+                <p>{{ hotel.endereco }}</p>
+                <p>{{ hotel.descricao }}</p>
+                {% if hotel.imagem %}
+                    <img src="{{ hotel.imagem.url }}" alt="Imagem do hotel">
+                {% else %}
+                    <p>Sem imagem disponível</p>
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

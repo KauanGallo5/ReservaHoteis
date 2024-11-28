@@ -1,0 +1,126 @@
+/* Definindo o fundo e a fonte geral */
+body {
+    background-color: #1e1e1e; /* Cinza escuro */
+    color: #d1d1d1; /* Cor de texto clara */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Título principal */
+h1 {
+    text-align: center;
+    color: #ffffff; /* Branco */
+    margin-top: 50px;
+    font-size: 2.5rem;
+}
+
+/* Subtítulos */
+h2 {
+    color: #ffffff; /* Branco */
+    font-size: 2rem;
+    margin-top: 30px;
+    text-align: center;
+}
+
+/* Detalhes do hotel */
+p {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #b0b0b0; /* Cor mais suave para descrição */
+    margin: 10px 0;
+}
+
+/* Lista de quartos */
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 30px auto;
+    max-width: 900px;
+}
+
+/* Estilo para cada item de quarto */
+li {
+    background-color: #333; /* Cinza mais claro */
+    color: #ddd; /* Texto suave */
+    border: 1px solid #444; /* Bordas discretas */
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Links para reservar quarto */
+a {
+    display: inline-block;
+    background-color: #505c63; /* Cor do botão */
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-top: 10px;
+    text-decoration: none;
+}
+
+a:hover {
+    background-color: #3c464b; /* Cor mais escura no hover */
+}
+
+a:active {
+    background-color: #2b3337; /* Cor ainda mais escura quando clicado */
+}
+
+/* Estilo para os status de disponibilidade */
+p {
+    margin-top: 10px;
+    font-size: 1rem;
+}
+
+p:contains('Disponível') {
+    color: #4CAF50; /* Verde para disponível */
+}
+
+p:contains('Indisponível') {
+    color: #f44336; /* Vermelho para indisponível */
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    body {
+        padding: 15px;
+    }
+
+    h1, h2 {
+        font-size: 2rem;
+    }
+
+    ul {
+        margin: 20px;
+    }
+
+    li {
+        font-size: 1rem;
+    }
+
+    a {
+        font-size: 1rem;
+    }
+}
+
+/* Centralizando a imagem do quarto */
+.quarto-imagem {
+    display: block; /* Faz a imagem se comportar como um bloco */
+    margin-left: auto; /* Margem automática à esquerda */
+    margin-right: auto; /* Margem automática à direita */
+    max-width: 80%; /* Define a largura máxima como 80% do elemento pai */
+    height: auto; /* Mantém a proporção da imagem */
+    border-radius: 5px; /* Se você quiser bordas arredondadas */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave para dar destaque */
+}
+
+/* Responsividade: A imagem vai ficar maior em telas maiores, mas não ultrapassará 100% da largura */
+@media (min-width: 768px) {
+    .quarto-imagem {
+        max-width: 50%; /* Para telas maiores, a imagem pode ter até 50% da largura */
+    }
+}

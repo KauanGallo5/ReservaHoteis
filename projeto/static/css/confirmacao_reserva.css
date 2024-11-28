@@ -1,0 +1,75 @@
+/* Definindo o fundo e a fonte geral */
+body {
+    background-color: #1e1e1e; /* Cinza escuro */
+    color: #d1d1d1; /* Cor de texto clara */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Título da confirmação */
+h2 {
+    text-align: center;
+    color: #ffffff; /* Branco */
+    margin-top: 50px;
+    font-size: 2.5rem;
+}
+
+/* Parágrafos com as informações */
+p {
+    text-align: center;
+    color: #d1d1d1;
+    font-size: 1.2rem;
+    margin: 15px 0;
+}
+
+/* Links de ação */
+a {
+    display: inline-block;
+    background-color: #505c63; /* Cor do link */
+    color: #fff;
+    padding: 12px 20px;
+    border-radius: 5px;
+    margin-top: 20px;
+    text-decoration: none;
+    text-align: center;
+}
+
+a:hover {
+    background-color: #3c464b; /* Cor mais escura no hover */
+}
+
+a:active {
+    background-color: #2b3337; /* Cor ainda mais escura quando clicado */
+}
+
+/* Caixa de conteúdo centralizada */
+.container {
+    width: 80%;
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #333;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    body {
+        padding: 15px;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+
+    a {
+        font-size: 1rem;
+        padding: 10px 15px;
+    }
+}

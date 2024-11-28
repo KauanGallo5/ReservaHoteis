@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  {% load static %}
+  <link rel="stylesheet" type="text/css" href="{% static 'css/minhas_reservas.css' %}?v=2">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minhas Reservas</title>
+</head>
+<body>
+  {% load static %}
+
+    <h1>Minhas Reservas</h1>
+
+    {% if reservas %}
+      <ul>
+        {% for reserva in reservas %}
+          <li>
+            Quarto: {{ reserva.quarto.numero }} - 
+            Data de Check-in: {{ reserva.data_check_in }} - 
+            Data de Check-out: {{ reserva.data_check_out }} - 
+            Valor Total: R$ {{ reserva.valor_total }}
+            <a href="{% url 'cancelar_reserva' reserva.id %}" class="btn-cancel">Cancelar Reserva</a>
+          </li>
+        {% endfor %}
+      </ul>
+    {% else %}
+      <p>Você não tem reservas.</p>
+    {% endif %}
+    
+    <a href="{% url 'index' %}" class="btn btn-secondary">Voltar para a página principal</a>
+</body>
+</html>

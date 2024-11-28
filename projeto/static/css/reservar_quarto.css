@@ -1,0 +1,100 @@
+/* Definindo o fundo e a fonte geral */
+body {
+    background-color: #1e1e1e; /* Cinza escuro */
+    color: #d1d1d1; /* Cor de texto clara */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Título principal */
+h1 {
+    text-align: center;
+    color: #ffffff; /* Branco */
+    margin-top: 50px;
+    font-size: 2.5rem;
+}
+
+/* Formulário */
+form {
+    background-color: #333; /* Cinza mais claro */
+    padding: 20px;
+    margin: 30px auto;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Inputs e botões do formulário */
+input[type="text"], input[type="number"], input[type="date"], select, textarea {
+    width: 90%;
+    padding: 10px;
+    margin: 10px 0;
+    background-color: #444;
+    border: 1px solid #555;
+    border-radius: 5px;
+    color: #ddd;
+    font-size: 1rem;
+}
+
+input[type="submit"], button[type="submit"] {
+    background-color: #505c63; /* Cor do botão */
+    color: #fff;
+    padding: 12px 20px;
+    border-radius: 5px;
+    width: 100%;
+    border: none;
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover, button[type="submit"]:hover {
+    background-color: #3c464b; /* Cor mais escura no hover */
+}
+
+input[type="submit"]:active, button[type="submit"]:active {
+    background-color: #2b3337; /* Cor ainda mais escura quando clicado */
+}
+
+/* Link para voltar aos detalhes do hotel */
+a {
+    display: inline-block;
+    background-color: #505c63; /* Cor do link */
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-top: 20px;
+    text-decoration: none;
+}
+
+a:hover {
+    background-color: #3c464b; /* Cor mais escura no hover */
+}
+
+/* Estilo para links em textos */
+p {
+    text-align: center;
+    color: #b0b0b0;
+    font-size: 1.1rem;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    body {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    form {
+        width: 100%;
+        padding: 15px;
+    }
+
+    input[type="submit"], button[type="submit"] {
+        font-size: 1rem;
+    }
+}

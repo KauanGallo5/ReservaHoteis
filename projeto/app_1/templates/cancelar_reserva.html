@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cancelar Reserva</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/cancelar_reserva.css' %}">
+</head>
+<body>
+    {% load static %}
+    <div class="container">
+        <h2>Tem certeza de que deseja cancelar a reserva?</h2>
+        <p><strong>Número da Reserva:</strong> {{ reserva.id }}</p>
+        <p><strong>Quarto:</strong> {{ reserva.quarto }}</p>
+        <p><strong>Check-in:</strong> {{ reserva.data_check_in }}</p>
+        <p><strong>Check-out:</strong> {{ reserva.data_check_out }}</p>
+        <form method="post">
+            {% csrf_token %}
+            <button type="submit">Confirmar Cancelamento</button>
+            <a href="{% url 'minhas_reservas' %}">Voltar</a>
+        </form>
+    </div>
+</body>
+</html>

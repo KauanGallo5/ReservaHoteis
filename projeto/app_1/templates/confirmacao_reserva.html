@@ -1,0 +1,11 @@
+<title>Confirmação Reserva</title>
+
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/confirmacao_reserva.css' %}">
+<h2>Sua reserva foi realizada com sucesso!</h2>
+<p><strong>Número da Reserva:</strong> {{ reserva.id }}</p>
+<p><strong>Quarto:</strong> {{ reserva.quarto }}</p>
+<p><strong>Check-in:</strong> {{ reserva.data_check_in }}</p>
+<p><strong>Check-out:</strong> {{ reserva.data_check_out }}</p>
+<p><strong>Valor Total:</strong> R$ {{ reserva.valor_total }}</p>
+<a href="{% url 'index' %}" class="btn btn-secondary">Voltar para a página principal</a>

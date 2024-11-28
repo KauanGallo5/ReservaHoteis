@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/detalhes_hotel.css' %}?v={{ timestamp }}">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ hotel.nome }}</title>
+</head>
+<body>
+    {% load static %}
+    <h1>{{ hotel.nome }}</h1>
+    <p>{{ hotel.endereco }}</p>
+    <p>{{ hotel.descricao }}</p>
+
+    <h2>Quartos Disponíveis</h2>
+    <ul>
+        {% for quarto in quartos %}
+            <li>
+                <h3>Quarto {{ quarto.numero }}</h3>
+                <p>Descrição: {{quarto.descricao}}</p>
+                <p>Capacidade: {{ quarto.capacidade }} pessoas</p>
+                <p>Preço por diária: R$ {{ quarto.diaria }}</p>
+                {% if quarto.imagem %}
+                <img src="{{ quarto.imagem.url }}" alt="Imagem do quarto" class="quarto-imagem">
+                {% else %}
+                <p>Sem imagem disponível</p>
+                {% endif %}
+                <p>{% if quarto.disponivel %}Disponível{% else %}Indisponível{% endif %}</p>
+                <a href="{% url 'reservar_quarto' quarto.id %}">Reservar</a>
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'index' %}" class="btn btn-secondary">Voltar para a lista de hoteis</a>
+</body>
+</html>
